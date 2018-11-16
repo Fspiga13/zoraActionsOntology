@@ -1,0 +1,2009 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/nadril/ontologies/2018/5/untitled-ontology-22"
+     xml:base="http://www.semanticweb.org/nadril/ontologies/2018/5/untitled-ontology-22"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:ZoraBasics="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics">
+        <rdfs:comment>Ontologia per i movimenti base del robot Zora</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#incompatibleWithPrevious -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#incompatibleWithPrevious">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#isInvolved"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involvesBoth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involvesBoth">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#isInvolved -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#isInvolved">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#isUsedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#isUsedBy">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#uses"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#uses -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#uses">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#usesBoth -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#usesBoth">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#uses"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#bodySide -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#bodySide">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotEye"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#code">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hasOperatingMode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hasOperatingMode">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotOperatingMode"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hold</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reset</rdf:first>
+                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hasWordProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hasWordProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#keyword -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#keyword">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hasWordProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#synonym -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#synonym">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hasWordProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegAction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundHandsAction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involvesBoth"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundHandsAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundHandsAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegAction">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotOperatingMode"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#code"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#incompatibleWithPrevious"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#usesBoth"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#bodySide"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotEye -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotEye">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#usesBoth"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#bodySide"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#bodySide"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotOperatingMode -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotOperatingMode">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#involves"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#synonym"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#keyword"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Robot"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Word"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmDown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmDown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#down"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmForward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmForward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#forward"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmSide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmSide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#side"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmUp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmUp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#up"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsDown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsDown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#down"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsForward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsForward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#forward"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsSide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsSide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#side"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsUp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsUp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#up"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#crouch"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesColor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesColor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#changeColor"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">C</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesOpen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesOpen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#open"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesRolling -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesRolling">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#roll"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesTwinkle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesTwinkle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#twinkle"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandClose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandClose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#close"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandOpen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandOpen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#open"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandsClose -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandsClose">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundHandsAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#close"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandsOpen -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandsOpen">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundHandsAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+        <ZoraBasics:involvesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#open"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadDown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadDown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#down"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadForward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadForward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#forward"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">4</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadLeft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadLeft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#moveLeft"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadRight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadRight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#moveRight"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadUp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadUp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#up"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegDown -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegDown">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftLeg"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightLeg"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#down"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegAction"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftLeg"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightLeg"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#up"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#lyingBack"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">30</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#lyingBelly"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">31</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Mode -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Mode">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotOperatingMode"/>
+        <ZoraBasics:hasOperatingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reset</ZoraBasics:hasOperatingMode>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationHalfTurn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationHalfTurn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#halfTurn"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationPirouette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationPirouette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#pirouette"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationQuarterTurnLeft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationQuarterTurnLeft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#turnLeft"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R2</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationQuarterTurnRight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationQuarterTurnRight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#turnRight"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">R3</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sit"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">10</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sitRelax"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">11</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Stand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Stand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#stand"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">01</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#StandInit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#StandInit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#standInit"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">00</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkBackward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkBackward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#backward"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W1</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkForward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkForward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#walkForward"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W0</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkSide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkSide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+        <ZoraBasics:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+        <ZoraBasics:involves rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#walkSide"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W2</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraHead">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#head"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HH</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arm"/>
+        <ZoraBasics:usesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arms"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AL</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotEye"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eye"/>
+        <ZoraBasics:usesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eyes"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EL</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hand"/>
+        <ZoraBasics:usesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hands"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HL</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftLeg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftLeg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#leg"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LL</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arm"/>
+        <ZoraBasics:usesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arms"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AR</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotEye"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eye"/>
+        <ZoraBasics:usesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eyes"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ER</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hand"/>
+        <ZoraBasics:usesBoth rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hands"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HR</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightLeg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightLeg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+        <ZoraBasics:uses rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#leg"/>
+        <ZoraBasics:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right</ZoraBasics:bodySide>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">LR</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRobot">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotBody"/>
+        <ZoraBasics:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">RR</ZoraBasics:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arm</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendage</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bicep</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forearm</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forelimb</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arms -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arms">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arms</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">appendages</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">biceps</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forearms</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forelimbs</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#backward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#backward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">backward</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go backward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">march back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">march backward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move backward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">step backward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroll back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroll backward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tread back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tread backward</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#changeColor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#changeColor">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change color</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change colour</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change dye</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change hue</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change tint</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">change tone</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle color</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle colour</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle dye</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle hue</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle tint</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">restyle tone</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set color</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set colour</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set dye</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set hue</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set tint</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set tone</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#close -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#close">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">close</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">clench</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">enclose</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#crouch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#crouch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">crouch</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">get knees</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hunker</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hunker down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kneel</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kneel down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">snuggle</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">squat</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#down -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#down">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">down</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bottomward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bring down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">descend</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">drop</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">groundward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lower</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lower down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pull down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put downward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set downward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">throw down</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eye -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eye">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eye</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyeball</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyelash</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyelid</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">iris</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pupil</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eyes -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eyes">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyes</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyeballs</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyelashes</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">eyelids</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">irises</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pupils</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#forward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#forward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">forward</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">set forward</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#halfTurn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#halfTurn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">half turn</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">roll over</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn around</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn backward</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hand</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">claw</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitt</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitten</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">palm</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paw</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hands -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hands">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hands</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">claws</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mittens</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mitts</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">palms</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">paws</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#head -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#head">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">head</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">brainpan</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">noggin</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">poll</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#leg -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#leg">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BodyPartWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">leg</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">shank</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#lyingBack -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#lyingBack">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lying back</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">get back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lie back</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">supine</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#lyingBelly -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#lyingBelly">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lying belly</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lie down</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lie prone</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prostrate</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#moveLeft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#moveLeft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move left</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put left</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#moveRight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#moveRight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move right</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put right</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#open -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#open">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keep open</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put out</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unclench</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#pirouette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#pirouette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pirouette</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flip</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">revolution</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">spin around</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">twirl</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#roll -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#roll">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">roll</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rolling</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#side -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#side">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">side</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move side</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move sidelong</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move sideways</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put side</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put sidelong</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put sideways</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sidelong</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sideways</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sit</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">load</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seat</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sit down</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sit"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#synonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">load</owl:annotatedTarget>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Take the load off</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sit"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#synonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">seat</owl:annotatedTarget>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">take a seat</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sitRelax -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#sitRelax">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sit relax</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sit comfortably</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#stand -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#stand">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stand</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">arise</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">get feet</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">get up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">rise up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stand up</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#stand"/>
+        <owl:annotatedProperty rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#synonym"/>
+        <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">get feet</owl:annotatedTarget>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">get on your feet</rdfs:comment>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#standInit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#standInit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stand init</ZoraBasics:keyword>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#turnLeft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#turnLeft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn left</ZoraBasics:keyword>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#turnRight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#turnRight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn right</ZoraBasics:keyword>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#twinkle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#twinkle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">twinkle</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bat</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">blink</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">flutter</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nictate</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nictitate</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wink</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#up -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#up">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">up</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">bring up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elevate</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">erect</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hold up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">increase</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lift</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lift up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pull up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">raise</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">raise up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">run up</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uplift</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">uprise</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#walkForward -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#walkForward">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk forward</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">march forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">step forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stride forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroll forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tread forward</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nadril/ontologies/ZoraBasics#walkSide -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#walkSide">
+        <rdf:type rdf:resource="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ActionWord"/>
+        <ZoraBasics:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk side</ZoraBasics:keyword>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go crabwise</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go sideways</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move crabwise</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk crabwise</ZoraBasics:synonym>
+        <ZoraBasics:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk sideways</ZoraBasics:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#BaseAction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompoundAction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SimpleAction"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundArmsAction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundEyesAction"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#CompundHandsAction"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Posture"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Rotation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Walk"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotEye"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotArm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotHead"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RobotLeg"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmDown"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmForward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmSide"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmUp"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsDown"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsForward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsSide"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ArmsUp"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Crouch"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBack"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LyingBelly"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Sit"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#SitRelax"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#Stand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#StandInit"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesColor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesOpen"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesRolling"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#EyesTwinkle"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandClose"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandOpen"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandsClose"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HandsOpen"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadDown"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadForward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadLeft"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadRight"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#HeadUp"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegDown"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#LegUp"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationHalfTurn"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationPirouette"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationQuarterTurnLeft"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#RotationQuarterTurnRight"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkBackward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkForward"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#WalkSide"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftArm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightArm"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftEye"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightEye"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftHand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightHand"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraLeftLeg"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#ZoraRightLeg"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arm"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eye"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#head"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#leg"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#arms"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#eyes"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nadril/ontologies/ZoraBasics#hands"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
