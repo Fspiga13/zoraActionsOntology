@@ -155,11 +155,11 @@
                 <owl:oneOf>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">hold</rdf:first>
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HOLD</rdf:first>
                         <rdf:rest>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
-                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reset</rdf:first>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SEQUENTIAL</rdf:first>
                                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                             </rdf:Description>
                         </rdf:rest>
@@ -455,6 +455,13 @@
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#usesBoth"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#BodyPartWord"/>
@@ -475,6 +482,14 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotEye -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotEye">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#uses"/>
@@ -486,18 +501,17 @@
     
 
 
-    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotEye -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotEye">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHand -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHand">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#usesBoth"/>
@@ -520,6 +534,13 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHead">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -528,6 +549,13 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotLeg">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#uses"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#BodyPartWord"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#bodySide"/>
@@ -650,9 +678,7 @@
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftHand"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightHand"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#down"/>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1</ZoraActions:code>
     </owl:NamedIndividual>
@@ -669,9 +695,7 @@
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftHand"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightHand"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#forward"/>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2</ZoraActions:code>
     </owl:NamedIndividual>
@@ -688,9 +712,7 @@
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftHand"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightHand"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#side"/>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">3</ZoraActions:code>
     </owl:NamedIndividual>
@@ -707,9 +729,7 @@
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftHand"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightArm"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightHand"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#up"/>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">0</ZoraActions:code>
     </owl:NamedIndividual>
@@ -1048,7 +1068,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Mode">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotOperatingMode"/>
-        <ZoraActions:hasOperatingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">reset</ZoraActions:hasOperatingMode>
+        <ZoraActions:hasOperatingMode rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SEQUENTIAL</ZoraActions:hasOperatingMode>
     </owl:NamedIndividual>
     
 
@@ -1160,18 +1180,6 @@
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegUp"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRobot"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#stand"/>
-        <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">01</ZoraActions:code>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#StandInit -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#StandInit">
-        <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Posture"/>
-        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegUp"/>
-        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRobot"/>
-        <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#standInit"/>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">00</ZoraActions:code>
     </owl:NamedIndividual>
     
@@ -1211,9 +1219,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSide -->
+    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSideLeft -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSide">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSideLeft">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Walk"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Crouch"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegUp"/>
@@ -1222,8 +1230,25 @@
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
         <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRobot"/>
-        <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSide"/>
+        <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSideLeft"/>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W2</ZoraActions:code>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSideRight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSideRight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Walk"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Crouch"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegUp"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LyingBack"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LyingBelly"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
+        <ZoraActions:involves rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRobot"/>
+        <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSideRight"/>
+        <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">W3</ZoraActions:code>
     </owl:NamedIndividual>
     
 
@@ -1243,7 +1268,9 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraLeftArm">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotArm"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#arm"/>
+        <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#hand"/>
         <ZoraActions:usesBoth rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#arms"/>
+        <ZoraActions:usesBoth rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#hands"/>
         <ZoraActions:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">left</ZoraActions:bodySide>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AL</ZoraActions:code>
     </owl:NamedIndividual>
@@ -1290,7 +1317,9 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ZoraRightArm">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotArm"/>
         <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#arm"/>
+        <ZoraActions:uses rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#hand"/>
         <ZoraActions:usesBoth rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#arms"/>
+        <ZoraActions:usesBoth rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#hands"/>
         <ZoraActions:bodySide rdf:datatype="http://www.w3.org/2001/XMLSchema#string">right</ZoraActions:bodySide>
         <ZoraActions:code rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AR</ZoraActions:code>
     </owl:NamedIndividual>
@@ -1722,20 +1751,12 @@
     
 
 
-    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#standInit -->
-
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#standInit">
-        <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ActionWord"/>
-        <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stand init</ZoraActions:keyword>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#turnLeft -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#turnLeft">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ActionWord"/>
         <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn left</ZoraActions:keyword>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn left</ZoraActions:synonym>
     </owl:NamedIndividual>
     
 
@@ -1745,6 +1766,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#turnRight">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ActionWord"/>
         <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn right</ZoraActions:keyword>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">turn right</ZoraActions:synonym>
     </owl:NamedIndividual>
     
 
@@ -1804,16 +1826,32 @@
     
 
 
-    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSide -->
+    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSideLeft -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSide">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSideLeft">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ActionWord"/>
-        <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk side</ZoraActions:keyword>
-        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go crabwise</ZoraActions:synonym>
-        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go sideways</ZoraActions:synonym>
-        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">move crabwise</ZoraActions:synonym>
-        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk crabwise</ZoraActions:synonym>
-        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk sideways</ZoraActions:synonym>
+        <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk left</ZoraActions:keyword>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go left</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">march left</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">step left</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stride left</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroll left</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tread left</ZoraActions:synonym>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSideRight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#walkSideRight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ActionWord"/>
+        <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">walk right</ZoraActions:keyword>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">go right</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">march right</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">step right</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stride right</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stroll right</ZoraActions:synonym>
+        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tread right</ZoraActions:synonym>
     </owl:NamedIndividual>
     
 
@@ -1890,18 +1928,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Crouch"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LyingBack"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LyingBelly"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Sit"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SitRelax"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Stand"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#StandInit"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#EyesColor"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#EyesOpen"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#EyesRolling"/>
@@ -1953,7 +1979,8 @@
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkBackward"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkForward"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSide"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSideLeft"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#WalkSideRight"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
