@@ -290,12 +290,6 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotAction"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotBody"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#SimpleAction"/>
     </owl:Class>
     
@@ -305,6 +299,32 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#CompundArmsAction">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#CompoundAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotArm"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHand"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotArm"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHand"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -313,6 +333,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#CompundEyesAction">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#CompoundAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotEye"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotEye"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
@@ -321,6 +353,18 @@
 
     <owl:Class rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#CompundHandsAction">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#CompoundAction"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#involvesBoth"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#RobotHand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
