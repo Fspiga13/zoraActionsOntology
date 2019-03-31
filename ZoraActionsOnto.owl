@@ -1062,6 +1062,12 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegUp">
         <rdf:type rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegAction"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ArmForward"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ArmSide"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ArmUp"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ArmsForward"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ArmsSide"/>
+        <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#ArmsUp"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#Crouch"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LegUp"/>
         <ZoraActions:incompatibleWithPrevious rdf:resource="http://www.semanticweb.org/federico-spiga/ontologies/ZoraActions#LyingBack"/>
@@ -1693,7 +1699,6 @@
         <ZoraActions:keyword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open</ZoraActions:keyword>
         <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">keep open</ZoraActions:synonym>
         <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">open up</ZoraActions:synonym>
-        <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">put out</ZoraActions:synonym>
         <ZoraActions:synonym rdf:datatype="http://www.w3.org/2001/XMLSchema#string">unclench</ZoraActions:synonym>
     </owl:NamedIndividual>
     
